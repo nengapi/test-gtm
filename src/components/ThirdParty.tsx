@@ -1,14 +1,20 @@
-'use client';
+"use client";
 
 // import { GoogleTagManager } from "@next/third-parties/google";
 
-import { Partytown } from '@builder.io/partytown/react';
+import { Partytown } from "@builder.io/partytown/react";
+import {
+  GTM_TAG_ASSISTANT_ACCESSOR,
+  GTM_TAG_ASSISTANT_FORWARDER,
+  GTMScript,
+  partytownResolveUrl,
+} from "@superside-oss/partytown-gtm";
 
 export function ThirdParty() {
   return (
     <>
       {/* <GoogleTagManager gtmId="GTM-M8QWC2M7" /> */}
-      <Partytown
+      {/* <Partytown
         debug={true}
         forward={['dataLayer.push']}
         lib="/~partytown/"
@@ -30,7 +36,14 @@ export function ThirdParty() {
 
           gtag('config', 'GTM-M8QWC2M7');
         `,
-      }} />
+      }} /> */}
+      <Partytown
+        debug={true}
+        forward={["dataLayer.push", GTM_TAG_ASSISTANT_FORWARDER]}
+        mainWindowAccessors={[GTM_TAG_ASSISTANT_ACCESSOR]}
+        resolveUrl={partytownResolveUrl}
+      />
+      <GTMScript gtmId={'GTM-M8QWC2M7'} />
     </>
   );
 }
