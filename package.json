@@ -10,18 +10,18 @@
     "partytown": "partytown copylib public/~partytown"
   },
   "dependencies": {
-    "@builder.io/partytown": "^0.10.2",
-    "@superside-oss/partytown-gtm": "^1.0.0-alpha.12",
+    "@builder.io/partytown": "0.8.2",
+    "@superside-oss/partytown-gtm": "1.0.0-alpha.12",
     "next": "14.2.18",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "18",
+    "react-dom": "18"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "typescript": "5",
+    "@types/node": "20",
+    "@types/react": "18",
+    "@types/react-dom": "18",
+    "postcss": "8",
+    "tailwindcss": "3.4.1"
   }
 }
