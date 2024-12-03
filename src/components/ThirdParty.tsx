@@ -1,10 +1,14 @@
 'use client';
-import { Partytown } from '@builder.io/partytown/react';
+
+import { GoogleTagManager } from "@next/third-parties/google";
+
+// import { Partytown } from '@builder.io/partytown/react';
 
 export function ThirdParty() {
   return (
     <>
-      <Partytown
+      <GoogleTagManager gtmId="GTM-M8QWC2M7" />
+      {/* <Partytown
         debug={true}
         forward={['dataLayer.push']}
         lib="/~partytown/"
@@ -26,7 +30,7 @@ export function ThirdParty() {
 
           gtag('config', 'GTM-M8QWC2M7');
         `,
-      }} />
+      }} /> */}
     </>
   );
 }
