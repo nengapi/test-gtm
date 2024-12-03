@@ -16,7 +16,7 @@ export function ThirdParty() {
         mainWindowAccessors={[GTM_TAG_ASSISTANT_ACCESSOR]}
         resolveUrl={partytownResolveUrl}
       />
-      <GTMScript gtmId={process.env.NEXT_PUBLIC_GTM_ID as string} />
+      <GTMScript gtmId={'GTM-M8QWC2M7'} />
     </>
   );
 }
