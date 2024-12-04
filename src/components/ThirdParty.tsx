@@ -41,18 +41,8 @@ export function ThirdParty() {
         debug={true}
         forward={[
           "dataLayer.push", // Forward dataLayer.push
-          GTM_TAG_ASSISTANT_FORWARDER, // Forward GTM assistant
-          "document.open", // เพิ่ม document.open
-          "document.write", // เพิ่ม document.write
-          "window.open",
-          "console.log", // Forward console logs
-          "console.error", // Forward errors
         ]}
-        mainWindowAccessors={[
-          GTM_TAG_ASSISTANT_ACCESSOR, // อนุญาตเข้าถึง GTM assistant
-          "document", // อนุญาตเข้าถึง document
-          "window", // อนุญาตเข้าถึง window
-        ]}
+        mainWindowAccessors={[]}
         resolveUrl={partytownResolveUrl}
       />
       <GTMScript gtmId={"GTM-M8QWC2M7"} />
