@@ -9,6 +9,11 @@ import {
 } from "@superside-oss/partytown-gtm";
 
 export function ThirdParty() {
+  const isGTMDebug =
+    typeof window !== "undefined" &&
+    window.location.host === "www.googletagmanager.com" &&
+    window.location.pathname.startsWith("/debug");
+
   return (
     <>
       <Partytown
@@ -17,7 +22,7 @@ export function ThirdParty() {
         mainWindowAccessors={[GTM_TAG_ASSISTANT_ACCESSOR]}
         resolveUrl={partytownResolveUrl}
       />
-      <GTMScript skipPartytown={true} gtmId={"GTM-M8QWC2M7"} />
+      <GTMScript skipPartytown={isGTMDebug} gtmId={"GTM-M8QWC2M7"} />
     </>
   );
 }
