@@ -7,12 +7,11 @@ import {
   GTMScript,
   partytownResolveUrl,
 } from "@superside-oss/partytown-gtm";
+import { useSearchParams } from "next/navigation";
 
 export function ThirdParty() {
-  const isGTMDebug =
-    typeof window !== "undefined" &&
-    window.location.host === "www.googletagmanager.com" &&
-    window.location.pathname.startsWith("/debug");
+  const urlParams = useSearchParams();
+  const skipPartytown = urlParams.get('gtm_debug');
 
   return (
     <>
@@ -22,7 +21,7 @@ export function ThirdParty() {
         mainWindowAccessors={[GTM_TAG_ASSISTANT_ACCESSOR]}
         resolveUrl={partytownResolveUrl}
       />
-      <GTMScript skipPartytown={isGTMDebug} gtmId={"GTM-M8QWC2M7"} />
+      <GTMScript skipPartytown={skipPartytown !== null} gtmId={"GTM-M8QWC2M7"} />
     </>
   );
 }
